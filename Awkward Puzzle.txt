@@ -109,7 +109,7 @@ RULES
 [ > Player | no Wall ][ > Player | no Crate][ > Player | no Bomb][ > Player | no Repel][ > Player | no Target] -> [ | > Player ][ | > Player ][ | > Player ][ | > Player ][ | > Player ] sfx0
 
 [ > Player | Repel ] ->  [< Player | Repel]sfx4
-
+[ > Player | no Wall ][ > Player | no Crate][ > Player | no Bomb][ > Player | no Repel][ > Player | no Target] -> [ | > Player ][ | > Player ][ | > Player ][ | > Player ][ | > Player ]
 
 
 [ > Player | Bomb ] -> message Why are you punishing him!
@@ -157,7 +157,6 @@ message Level 1 (Tips: Some boxes are movable)
 #B...#...#
 ##########
 
-message 
 message Level 2
 
 ###########
@@ -186,7 +185,7 @@ message Level 3
 ##......B#
 ##########
 
-message He loves going to parties! Typically after it's finished.
+message He loves going to parties! Typically after they're finished.
 message Level 4
 
 ##########
@@ -230,7 +229,7 @@ message Level 6
 #P..#.*.##
 ##########
 
-message He doesn't get on a bus if there is already people in it!
+message He doesn't get on a bus if there are already people in it!
 message Level 7
 
 ##########
