@@ -1,4 +1,4 @@
-title Sliding Puzzle
+title Awkward Puzzle
 author Pasha & Mykhailo
 homepage www.puzzlescript.net
 
