@@ -1,0 +1,250 @@
+title Sliding Puzzle
+author Pasha & Mykhailo
+homepage www.puzzlescript.net
+
+========
+OBJECTS
+========
+
+Background
+#A5ABBD #7E90BC
+00000
+00000
+00100
+00000
+00000
+
+Target
+#6DAA2C #414756
+..0..
+..00.
+..000
+..0..
+..0..
+
+Wall
+#414756 #A5ABBD
+00000
+00000
+00100
+00000
+00000
+
+Player
+#000000 white #0072CE
+22222
+22000
+20101
+00000
+11111
+
+Crate
+#414756 #A5ABBD
+00000
+01110
+01110
+01110
+00000
+
+Bomb
+#CC3E29 white black
+.....
+.000.
+01210
+.000.
+.....
+
+Repel
+black lightbrown 
+00000
+00111
+01010
+11111
+11101
+
+
+
+
+=======
+LEGEND
+=======
+
+. = Background
+# = Wall
+P = Player
+* = Crate
+@ = Crate and Target
+O = Target
+B = Bomb
+R = Repel
+
+=======
+SOUNDS
+=======
+
+sfx0 84565700
+sfx1 63958702
+sfx2 59854907
+sfx3 87969703
+sfx4 85336102
+sfx5 84630102
+================
+COLLISIONLAYERS
+================
+
+Background
+Target, Repel, Bomb
+Player, Wall, Crate 
+
+======
+RULES
+======
+
+
+[ > Player | Wall]-> [ player | Wall] sfx5
+[ > player| Crate | Bomb] -> [Player| Crate | Bomb] sfx5
+[ > Player | Crate] -> [ > Player | > Crate] sfx2
+
+[ > player| Crate | wall] -> [Player| Crate | wall] sfx5
+[ > Player | no Wall ][ > Player | no Crate][ > Player | no Bomb][ > Player | no Repel][ > Player | no Target] -> [ | > Player ][ | > Player ][ | > Player ][ | > Player ][ | > Player ] sfx0
+
+[ > Player | Repel ] ->  [< Player | Repel]sfx4
+
+
+
+[ > Player | Bomb ] -> message Why are you punishing him!
++ [ > Player | Bomb ] -> [|Bomb] sfx1
+[ > Player | Target]-> [ | Player] sfx3
+
+
+==============
+WINCONDITIONS
+==============
+
+all Target on Player
+
+=======
+LEVELS
+=======
+
+message Help him find the exit
+
+message Level 0 (Tip: Some boxes are movable)
+
+##########
+#...#....#
+#...#....#
+##..#.O..#
+#...#....#
+#........#
+#P.......#
+#.....*..#
+#..#.....#
+##########
+
+message He is really terrified of eye contact!
+
+message Level 1 (Tips: Some boxes are movable)
+
+##########
+#...#...B#
+#...#....#
+#*....#O.#
+#...#....#
+#...#....#
+#P.......#
+#.....*..#
+#B...#...#
+##########
+
+message 
+message Level 2
+
+###########
+#B...P...B#
+#B.......B#
+#...#*#...#
+#.........B
+#.###.###.#
+#....#....#
+#*........#
+#...BOB...#
+#......*..#
+###########
+
+message He is socially awkward! Other people repulse him! 
+message Level 3
+
+##########
+####.....#
+#........#
+#P..R....#
+#....o...#
+#..*.....#
+#......###
+#R.......#
+##......B#
+##########
+
+message He loves going to parties! Typically after it's finished.
+message Level 4
+
+##########
+#B.....#B#
+#........#
+#..P.....R
+#...*.R.*#
+#........#
+#....#o..#
+##.......#
+#......R.#
+##########
+
+
+message He avoids Birthday Parties! He doesn't want to accidentally wish the wrong person.
+message Level 5
+
+##########
+#...R...o#
+#.....B..#
+#....*...#
+##.......#
+#......###
+#p......B#
+##.B.....#
+#..*.....#
+##########
+
+
+message To avoid small talk, he always takes the stairs despite living on the 7th floor. 
+message Level 6
+
+##########
+#B..R.#O.#
+#......B.#
+###......#
+#...*...##
+#........#
+#..R....B#
+#...#....#
+#P..#.*.##
+##########
+
+message He doesn't get on a bus if there is already people in it!
+message Level 7
+
+##########
+##....B..#
+#.**..#..#
+#P.......#
+#........#
+#.......R#
+#.....##.#
+##.....*.#
+#..*.....#
+#......*.#
+#R.......#
+#o.#B...B#
+##########
+
+message He thanks you for helping him! Awkwardly, but deep from his heart.
