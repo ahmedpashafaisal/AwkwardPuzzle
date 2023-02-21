@@ -103,6 +103,7 @@ RULES
 
 [ > Player | Wall]-> [ player | Wall] sfx5
 [ > player| Crate | Bomb] -> [Player| Crate | Bomb] sfx5
+[ > player| Crate | Repel] -> [Player| Crate | Repel] sfx5
 [ > Player | Crate] -> [ > Player | > Crate] sfx2
 
 [ > player| Crate | wall] -> [Player| Crate | wall] sfx5
